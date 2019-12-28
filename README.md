@@ -1,6 +1,6 @@
-# vue-bulk-upload
+# vuejs Example By Amit Jha
 
-> vue bulk upload
+> vueJS Paging Grid [Demo](https://amitjha211.github.io/vue_examples/index.html)
 
 ## Build Setup
 

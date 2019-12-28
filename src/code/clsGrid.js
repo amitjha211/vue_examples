@@ -39,13 +39,19 @@ export class clsGrid
         this.url = "";
         this.view = ""
 
-        this.currentPage = 2;
+        this.currentPage = 1;
         this.count = 100;
         this.pageSize = 10;
         
         this.rows = [];
         this.busy = false;
         
+    }
+
+    getPageCount()
+    {
+        
+        return Math.ceil( this.count / this.pageSize);
     }
 
     load(){
