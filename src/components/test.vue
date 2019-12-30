@@ -5,6 +5,7 @@
         </div>
         <div class="card-body" style="min-height:400px;">
             <pager v-bind:grd="grd" />
+            
             <table class="table table-bordered table-hover" style="margin-top:10px">
                 <thead>
                     <tr>
@@ -25,7 +26,7 @@
                     </tr>
                 </tbody>
             </table>
-            <busy v-bind:grd="grd" />
+            <busy v-bind:grd="grd" /> -->
             
         </div>
         <div class="card-footer">
