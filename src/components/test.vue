@@ -26,7 +26,7 @@
                     </tr>
                 </tbody>
             </table>
-            <busy v-bind:grd="grd" /> -->
+            <busy v-bind:grd="grd" /> 
             
         </div>
         <div class="card-footer">

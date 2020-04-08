@@ -13,13 +13,11 @@
 
                 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                     <a type="button" class="btn btn-sm btn-outline-primary" v-on:click="page_buttons_shift_previous()"><i class="fa fa-angle-double-left"></i></a>
-                    <a type="button" v-for="button in pageButtons"  v-bind:class="['btn','btn-sm',{ 'btn-outline-primary' : button.num != grd.currentPage , 'btn-primary' : button.num == grd.currentPage  }]"  v-bind:key="button.num" v-text="button.num" v-on:click="grd.gotoPage(button.num)"></a>
+                    <a type="button" v-for="button in grd.pageButtons"  v-bind:class="['btn','btn-sm',{ 'btn-outline-primary' : button.num != grd.currentPage , 'btn-primary' : button.num == grd.currentPage  }]"  v-bind:key="button.num" v-text="button.num" v-on:click="grd.gotoPage(button.num)"></a>
                     <a type="button" class="btn btn-sm btn-outline-primary" v-on:click="page_buttons_shift_next()"><i class="fa fa-angle-double-right"></i></a>
                 </div>
 
                 &nbsp;&nbsp;<label>Page : <span class="badge badge-primary" v-text="grd.currentPage"></span> of  <span class="badge badge-info" v-text="grd.getPageCount()"></span> | Records : <span class="badge badge-info" v-text="grd.count"></span>  </label> 
-                <!--
-                -->
             </div>            
         </div>
     </div>
@@ -35,14 +33,8 @@ export default {
         grd : clsGrid   
     }
     ,data(){
-        return {
-            pageButtons : [
-                 { num : 1 }
-                ,{ num : 2 }
-                ,{ num : 3 }
-                ,{ num : 4 }
-            ]
-        }
+        console.log(this.grd);
+        return { }
     }
     , methods :{
         setPageSize(iSize){
@@ -51,15 +43,15 @@ export default {
         }
         ,page_buttons_shift_previous()
         {
-            if(this.pageButtons[0].num <= 1)
+            if(this.grd.pageButtons[0].num <= 1)
             {
                 alert("Sorry ! You are on the first page !");
                 return ;
             } 
 
-            for(let i=0;i < this.pageButtons.length;i++)
+            for(let i=0;i < this.grd.pageButtons.length;i++)
             {
-                this.pageButtons[i].num -= 1;
+                this.grd.pageButtons[i].num -= 1;
             }
 
             this.grd.gotoPage(this.pageButtons[0].num);
@@ -68,18 +60,18 @@ export default {
         }
         ,page_buttons_shift_next()
         {
-            if(this.pageButtons[this.pageButtons.length -1 ].num >= this.grd.getPageCount())
+            if(this.grd.pageButtons[this.grd.pageButtons.length -1 ].num >= this.grd.getPageCount())
             {
                 alert("Sorry ! You are on the last page, you can't move further");
                 return;
             }
              
 
-            for(let i=0;i < this.pageButtons.length;i++)
+            for(let i=0;i < this.grd.pageButtons.length;i++)
             {
-                this.pageButtons[i].num += 1;
+                this.grd.pageButtons[i].num += 1;
             }
-            this.grd.gotoPage(this.pageButtons[0].num);
+            this.grd.gotoPage(this.grd.pageButtons[0].num);
         }
     }
     , computed : {

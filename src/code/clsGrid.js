@@ -43,6 +43,13 @@ export class clsGrid
         this.count = 100;
         this.pageSize = 10;
         
+        this.pageButtons = [
+             { num : 1 }
+            ,{ num : 2 }
+            ,{ num : 3 }
+            ,{ num : 4 }
+        ];
+        
         this.rows = [];
         this.busy = false;
         
