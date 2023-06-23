@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Browser detect</title>
+		
+	</head>
+	<body>
+		<button>Test</button>
+		
+		
+		
+		<script>
+		
+			var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+			navigator.userAgent &&
+			navigator.userAgent.indexOf('CriOS') == -1 &&
+			navigator.userAgent.indexOf('FxiOS') == -1;
+
+			var el = document.createElement("p");
+			el.innerText = "Is it Safari: " + isSafari;
+
+			document.body.appendChild(el);
+
+			el = document.createElement("p");
+			el.innerText = "navigator.vendor: " + navigator.vendor;
+
+			document.body.appendChild(el);
+
+			el = document.createElement("p");
+			el.innerText = "navigator.userAgent: " + navigator.userAgent;
+
+			document.body.appendChild(el);
+		
+		</script>
+	</body>
+</html>
